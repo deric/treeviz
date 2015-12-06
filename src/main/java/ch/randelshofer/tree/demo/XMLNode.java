@@ -18,7 +18,7 @@ import java.util.*;
 /**
  * XMLNode.
  *
- * @author  Werner Randelshofer
+ * @author Werner Randelshofer
  * @version 2011-08-19 Composite nodes had weight +1 instead of correct weight.
  * <br>1.0 23. Juni 2008 Created.
  */
@@ -29,13 +29,15 @@ public class XMLNode implements TreeNode {
     private HashMap<String, String> attributes;
     private long cumulatedWeight;
 
-    /** Creates a new instance. */
+    /**
+     * Creates a new instance.
+     */
     public XMLNode() {
         attributes = new HashMap<String, String>();
     }
 
     @Override
-    public List<TreeNode> children() {
+    public List<? extends TreeNode> children() {
         return (children == null) ? Collections.EMPTY_LIST : children;
     }
 
@@ -58,7 +60,6 @@ public class XMLNode implements TreeNode {
     public String getName() {
         return name;
     }
-
 
     public void putAttribute(String key, String value) {
         attributes.put(key, value);
@@ -89,7 +90,7 @@ public class XMLNode implements TreeNode {
         }
         cumulatedWeight = info.getWeight(myPath);
         if (children != null) {
-            cumulatedWeight=0;
+            cumulatedWeight = 0;
             for (XMLNode child : children) {
                 child.accumulateWeights(info, myPath);
                 cumulatedWeight += child.getCumulatedWeight();

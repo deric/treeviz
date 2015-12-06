@@ -1,6 +1,6 @@
 /*
  * @(#)ManyEyesNode.java  1.0  2009-02-07
- * 
+ *
  * Copyright (c) 2009 Werner Randelshofer, Goldau, Switzerland.
  * All rights reserved.
  *
@@ -8,7 +8,6 @@
  * license agreement you entered into with Werner Randelshofer.
  * For details see accompanying license terms.
  */
-
 package ch.randelshofer.tree.demo;
 
 import ch.randelshofer.tree.TreeNode;
@@ -22,6 +21,7 @@ import java.util.List;
  * @version 1.0 2009-02-07 Created.
  */
 public class ManyEyesNode implements TreeNode {
+
     protected ManyEyesCompositeNode parent;
     private String name;
     private String[] values;
@@ -38,14 +38,17 @@ public class ManyEyesNode implements TreeNode {
     public ManyEyesCompositeNode getParent() {
         return parent;
     }
+
     public void setName(String newValue) {
-        this.name=newValue;
+        this.name = newValue;
     }
+
     public String getName() {
         return name;
     }
 
-    public List<TreeNode> children() {
+    @Override
+    public List<? extends TreeNode> children() {
         return Collections.EMPTY_LIST;
     }
 
@@ -56,6 +59,7 @@ public class ManyEyesNode implements TreeNode {
     public long getWeight() {
         return weight;
     }
+
     public void setWeight(long newValue) {
         this.weight = newValue;
     }

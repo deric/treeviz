@@ -18,7 +18,7 @@ import java.util.*;
 /**
  * TreevizFileSystemXMLNode.
  *
- * @author  Werner Randelshofer
+ * @author Werner Randelshofer
  * @version 1.0 4. Juli 2008 Created.
  */
 public class TreevizFileSystemXMLNode implements TreeNode {
@@ -29,12 +29,15 @@ public class TreevizFileSystemXMLNode implements TreeNode {
     private long cumulatedWeight;
     private int descendants = -1;
 
-    /** Creates a new instance. */
+    /**
+     * Creates a new instance.
+     */
     public TreevizFileSystemXMLNode() {
         attributes = new HashMap<String, Object>();
     }
 
-    public List<TreeNode> children() {
+    @Override
+    public List<? extends TreeNode> children() {
         return (children == null) ? Collections.EMPTY_LIST : children;
     }
 
