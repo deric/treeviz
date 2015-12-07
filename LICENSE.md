@@ -1,5 +1,6 @@
 The MIT License (MIT)
 
+Copyright (c) 1996-2011 Werner Randelshofer, Goldau, Switzerland.
 Copyright (c) 2015 Tomas Barton
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
